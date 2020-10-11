@@ -216,16 +216,16 @@ nav{
     margin-top: 3%;
     text-align: left;
     font-size: 45px;
-    margin-left: 20%;
+    margin-left: 25%;
 }
 
 .logo-contact{
     justify-content: space-around;
-    margin: 5%;
+    margin: 4%;
     text-align: center;
 }
 
 .logo-config{
-    margin-right: 10%;
-    margin-left: 10%;
+    margin-right: 5%;
+    margin-left: 5%;
 }
