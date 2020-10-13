@@ -197,6 +197,11 @@ nav{
     margin-top: 25%;
     text-align: center;
 }
+.contact-coppyright{
+    color: #fff;
+    margin-top: 20%;
+    text-align: center;
+}
 
 .readme{
     color: #fff;
@@ -228,4 +233,29 @@ nav{
 .logo-config{
     margin-right: 5%;
     margin-left: 5%;
+}
+
+@media screen and (max-width: 1366px){
+    header {
+        height: 10vh;
+    }
+    .intro-text{
+        margin-top: 25%;
+    }
+    .bot-intro{
+        margin-top: 105%;
+    }
+    .text-intro{
+        font-size: 35px;
+    }
+    .contact-title{
+        margin-top: 15%;
+    }
+    .contact-text{
+        font-size: 40px;
+        margin-left: 15%;
+    }
+    .coppyright{
+        margin-top: 33%;
+    }
 }
