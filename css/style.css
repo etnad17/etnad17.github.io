@@ -4,6 +4,7 @@
     box-sizing: border-box;
 }
 html{
+    -webkit-overflow-scrolling: touch;
     scroll-behavior: smooth;
 }
 
@@ -34,95 +35,106 @@ body{
     background-repeat: no-repeat;
 }
 
-header{
-    display: flex;
-    height: 22vh;
-    margin: auto;
-    align-items: center;
-}
-
-.logo-container,.nav-links{
-    display: flex;
-}
-
-.logo{
-    color: #ffffff;
-    font-weight: 400;
-    margin : 40px;
-    margin-left: unset;
-    font-size: 22px;
-    font-weight: bold;    
-}
-
-.logo-container{
+@media screen and (min-width: 700px){
+    header{
+        display: flex;
+        height: 15vh;
+        margin: auto;
+        align-items: center;
+    }
     
-    flex: 1;
-}
-
-nav{
+    .logo-container,.nav-links{
+        display: flex;
+    }
     
-    flex: 2;
+    .logo{
+        color: #ffffff;
+        font-weight: 400;
+        margin : 40px;
+        margin-left: unset;
+        font-size: 22px;
+        font-weight: bold;    
+    }
+    
+    .logo-container{
+        margin-left: 20px;
+        padding-top: 20px;
+        flex: 1;
+    }
+    
+    nav{
+        flex: 2;
+    }
+    
+    .nav-links{
+        justify-content: space-around;
+        list-style: none;
+    }
+    
+    .nav-link{
+        list-style: none;
+        font-size: 20px;
+        text-decoration: none;
+        transition: 0.5s;
+    }
+    
+    .nav-link .cfg{
+        display: block;
+        position: relative;
+        text-decoration: none;
+        padding: 5px;
+        color: #fff;
+        text-transform: uppercase;
+        transition: 0.5s;
+    }
+    
+    .nav-links:hover .nav-link .cfg{
+        transform: scale(1.5);
+        opacity: .2;
+        filter: blur(5px);
+    }
+    
+    .nav-links .nav-link .cfg:hover{
+        transform: scale(2);
+        opacity: .5;
+        filter: blur(0);
+    }
+    
+    .nav-links .nav-link .cfg:before{
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: none;
+        transition: transform(0.5s);
+        transform-origin: right;
+        transform: scale(1);
+        z-index: -1;
+    }
+    
+    .nav-links .nav-link .cfg:hover:before{
+        transition: transform(0.5s);
+        transform-origin: right;
+        transform: scaleX(1);
+    }
+    .cfg:-webkit-any-link {
+        color: #3489db;
+        cursor: pointer;
+        text-decoration: none;
+        text-decoration-line: none;
+        text-decoration-style: initial;
+        text-decoration-color: initial;
+    }
+    .closebtn{
+        display: none;
+    }
 }
-
-.nav-links{
-    justify-content: space-around;
-    list-style: none;
-}
-
-.nav-link{
-    list-style: none;
-    font-size: 20px;
-    text-decoration: none;
-    transition: 0.5s;
-}
-
-.nav-link a{
-    display: block;
-    position: relative;
-    text-decoration: none;
-    padding: 5px;
-    color: #fff;
-    text-transform: uppercase;
-    transition: 0.5s;
-}
-
-.nav-links:hover .nav-link a{
-    transform: scale(1.5);
-    opacity: .2;
-    filter: blur(5px);
-}
-
-.nav-links .nav-link a:hover{
-    transform: scale(2);
-    opacity: .5;
-    filter: blur(0);
-}
-
-.nav-links .nav-link a:before{
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: none;
-    transition: transform(0.5s);
-    transform-origin: right;
-    transform: scale(1);
-    z-index: -1;
-}
-
-.nav-links .nav-link a:hover:before{
-    transition: transform(0.5s);
-    transform-origin: right;
-    transform: scaleX(1);
-}
-
-
 .intro-text{
    
     color: #fff;
-    margin-top: 12%;
+    margin-top: 17%;
     font-size: 60px;
     text-align: center;
 }
@@ -144,7 +156,7 @@ nav{
     margin: 10px;
 }
 .select-get{
-    color: #3489db;    
+    color: #3489db; 
 }
 .select-get:hover{
     color:#fff;
@@ -169,9 +181,8 @@ nav{
     height: 180%;
 }
 
- a:-webkit-any-link {
-    color: #3489db;
-    cursor: pointer;
+.text-btn{
+    color: #fff;
     text-decoration: none;
     text-decoration-line: none;
     text-decoration-style: initial;
@@ -211,6 +222,7 @@ nav{
 }
 
 .contact-title{
+    margin-top: 5%;
     color: #fff;
     text-align: center;
     font-size: 60px;
@@ -221,7 +233,7 @@ nav{
     margin-top: 3%;
     text-align: left;
     font-size: 45px;
-    margin-left: 25%;
+    margin-left: 18%;
 }
 
 .logo-contact{
@@ -235,27 +247,117 @@ nav{
     margin-left: 5%;
 }
 
-@media screen and (max-width: 1366px){
+@media screen and (max-width: 1024px){
     header {
         height: 10vh;
     }
     .intro-text{
-        margin-top: 25%;
+        margin-top: 40%;
     }
     .bot-intro{
-        margin-top: 105%;
+        margin-top: 115%;
     }
     .text-intro{
         font-size: 35px;
     }
     .contact-title{
-        margin-top: 15%;
+        margin-top: 32%;
     }
     .contact-text{
         font-size: 40px;
         margin-left: 15%;
     }
     .coppyright{
-        margin-top: 33%;
+        margin-top: 55%;
+    }
+    .contact-coppyright{
+        margin-top: 50%;
+    }
+}
+@media screen and (max-width: 768px){
+    .bot-intro{
+        margin-top: 105%;
+    }
+    .coppyright{
+        margin-top: 49%;
+    }
+    .contact-title{
+        margin-top: 25%;
+    }
+    .contact-text{
+        font-size: 30px;
+        margin-left: 12%;
+    }
+    .contact-coppyright{
+        margin-top: 55%;
+    }
+}
+@media screen and (max-width: 700px){
+    header{
+        padding-top: 20px;
+    }
+    .logo-container{
+        display: flex;
+    }
+    .sidebar {
+        height: 100%;
+        width: 0;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        background-color: #111;
+        overflow-x: hidden;
+        transition: 0.5s;
+        padding-top: 60px;
+        text-align:center;
+    }
+    .sidebar a{
+        padding: 8px 8px 8px 32px;
+        text-decoration: none;
+        font-size: 25px;
+        color: #818181;
+        display: block;
+        transition: 0.3s;
+      
+     }
+    ul li:hover a{
+        padding-left: 25px;
+        color: #f1f1f1;
+    }
+    .sidebar ul a i{
+        margin-right: 16px;
+    }
+    .sidebar .closebtn{
+        position: absolute;
+        top: 0;
+        right: 25px;
+        font-size: 36px;
+        margin-left: 50px;
+      }
+    .cfg{
+        text-decoration: none;
+    }
+    .logo{
+        color: #fff;
+        font-weight: 500;
+        margin : 30px;
+        margin-left: -20px;
+        font-size: 30px;
+        font-weight: bold; 
+    }
+    .intro-text{
+        font-size: 35px;
+        margin-top: 60%;
+    }
+    .bot-intro{
+        font-size: 45px;
+        margin-top: 170%;
+    }
+    .text-intro{
+        font-size: 25px;
+    }
+    .coppyright{
+        margin-top: 75%;
     }
 }
