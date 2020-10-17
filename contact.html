@@ -13,11 +13,12 @@
     <div id="particles-js"></div>
         <header>        
             <div class = "logo-container">
-                <img src="./img/logo_transparent.png" alt="logo" width="100" height="100"/>
-                <h4 class = "logo">DanteDEV</h4>
+                <img src="./img/logo_transparent.png" alt="logo" width="100" height="100" onclick="openNav()"/>
+                <h4 class = "logo" onclick="openNav()">DanteDEV</h4>
             </div>
-            <nav> 
+            <nav id="mySidenav" class="sidebar">
                 <ul class="nav-links">
+                    <li class="nav-link"><a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a></li>
                     <li class="nav-link"><a class="cfg" href="./index.html">Home</a></li>
                     <li class="nav-link"><a class="cfg" href="./firework.html">Firework</a></li>
                     <li class="nav-link"><a class="cfg" href="./video.html">Video</a></li>
@@ -167,5 +168,14 @@
   },
   "retina_detect": true
 })
-    </script>
+</script>
+<script>
+  function openNav() {
+    document.getElementById("mySidenav").style.width = "100%";
+  }
+  
+  function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+  }
+</script>
 </html>
